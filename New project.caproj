@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>New project</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>1eqolzyttkhrd</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="softlight">Soft Light</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>600</width>
+        <height>300</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Lvl1 TPs">
+            <object-type name="1Entry" sid="3972813676720259">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="8061159269349446">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9780626393979492" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp1.png">
+                            <collision-poly>
+                                <point x="0.136364" y="0.136364" />
+                                <point x="0.863636" y="0.136364" />
+                                <point x="0.863636" y="0.863636" />
+                                <point x="0.136364" y="0.863636" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="1Exit" sid="5784204969422286">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="7348600841409795">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1068191985839935" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp2.png">
+                            <collision-poly>
+                                <point x="0.136364" y="0.136364" />
+                                <point x="0.863636" y="0.136364" />
+                                <point x="0.863636" y="0.863636" />
+                                <point x="0.136364" y="0.863636" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="2Entry" sid="8442548981668094">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="7006712227015447">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3048693472377774" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp1.png">
+                            <collision-poly>
+                                <point x="0.136364" y="0.136364" />
+                                <point x="0.863636" y="0.136364" />
+                                <point x="0.863636" y="0.863636" />
+                                <point x="0.136364" y="0.863636" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="2Exit" sid="3512795480636193">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="5573662303778507">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8199863497538664" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp2.png">
+                            <collision-poly>
+                                <point x="0.136364" y="0.136364" />
+                                <point x="0.863636" y="0.136364" />
+                                <point x="0.863636" y="0.863636" />
+                                <point x="0.136364" y="0.863636" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="3Entry" sid="732055885177474">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="1299202829610767">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3346235005179397" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp1.png">
+                            <collision-poly>
+                                <point x="0.136364" y="0.136364" />
+                                <point x="0.863636" y="0.136364" />
+                                <point x="0.863636" y="0.863636" />
+                                <point x="0.136364" y="0.863636" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="3Exit" sid="1959694964716771">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="5353699660278681">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7570609072504068" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp2.png">
+                            <collision-poly>
+                                <point x="0.136364" y="0.136364" />
+                                <point x="0.863636" y="0.136364" />
+                                <point x="0.863636" y="0.863636" />
+                                <point x="0.136364" y="0.863636" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="4Entry" sid="3308498145971888">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="4010559161581437">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8399851373826974" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp1.png">
+                            <collision-poly>
+                                <point x="0.136364" y="0.136364" />
+                                <point x="0.863636" y="0.136364" />
+                                <point x="0.863636" y="0.863636" />
+                                <point x="0.136364" y="0.863636" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Generic">
+            <object-type name="PickMe" sid="6883469302632218">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="6302357132780712">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8315026930924219" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\collectible.png">
+                            <collision-poly>
+                                <point x="0.25" y="0.25" />
+                                <point x="0.5" y="0.125" />
+                                <point x="0.75" y="0.25" />
+                                <point x="0.875" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.5" y="0.875" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Spikes" sid="4709676602298237">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="999564669550062" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\pinches.png">
+                            <collision-poly>
+                                <point x="0.205882" y="0.425781" />
+                                <point x="0.797795" y="0.427734" />
+                                <point x="0.797795" y="0.902344" />
+                                <point x="0.204044" y="0.90625" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Win" sid="2296831161232106">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="598360791824307" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\meta.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Player" sid="1051411676072106">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Platform" sid="567384077862343">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="ScrollTo" sid="5680931300556075">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>Player</type>
+                    <type>PlayerAnim</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1780691036276246" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tilesheet-Sheet.png">
+                            <collision-poly>
+                                <point x="0.744141" y="0.125" />
+                                <point x="0.742188" y="0.9375" />
+                                <point x="0.316406" y="0.933594" />
+                                <point x="0.316406" y="0.123047" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="PlayerAnim" sid="9567400570351964">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="2485436326706574">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <container>
+                    <type>Player</type>
+                    <type>PlayerAnim</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3192441026036309" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tilesheet-Sheet.png">
+                            <collision-poly>
+                                <point x="0.744141" y="0.125" />
+                                <point x="0.742188" y="0.9375" />
+                                <point x="0.316406" y="0.933594" />
+                                <point x="0.316406" y="0.123047" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="2202752204778418" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\Parcial\Sprite-0002.png">
+                            <collision-poly>
+                                <point x="0.1875" y="0.1875" />
+                                <point x="0.5" y="0" />
+                                <point x="0.875" y="0.125" />
+                                <point x="0.75" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\Parcial\Sprite-0001.png">
+                            <collision-poly>
+                                <point x="0.1875" y="0.1875" />
+                                <point x="0.5" y="0" />
+                                <point x="0.875" y="0.125" />
+                                <point x="0.75" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.3125" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="System">
+            <object-type name="Death" sid="7024700952866109">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="1287113490960166">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5142593439223429" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Keyboard" sid="6941919763973741">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Tilemap" sid="6414784886933429">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="5236165541674096">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tilesheet-Saheet.png" />
+                <tiles />
+            </object-type>
+        </object-folder>
+        <object-folder name="Sound" />
+        <object-type name="BG" sid="4039215422210723">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tilesheet-Saheet.png" />
+        </object-type>
+        <object-type name="ScoreText" sid="5330735662095502">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="3420336769121412">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="tptime" sid="5953625858298852">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="2000117115256021">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="JumpthruPlatform" sid="7638199910150574">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="4682161982515655">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5744474383908422" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\platform.png">
+                        <collision-poly>
+                            <point x="0.933141" y="0.503906" />
+                            <point x="0.941229" y="0.944444" />
+                            <point x="0.0570934" y="0.944444" />
+                            <point x="0.0570934" y="0.505859" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="4Exit" sid="3792380749956536">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8158751424232254" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\tp2.png">
+                        <collision-poly>
+                            <point x="0.136364" y="0.136364" />
+                            <point x="0.863636" y="0.136364" />
+                            <point x="0.863636" y="0.863636" />
+                            <point x="0.136364" y="0.863636" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Slowfall" sid="4807073016019984">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="SoftLight">
+                    <effect id="softlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2883126176409821" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\slowfall.png">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Checkpoint" sid="3631150138484505">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2461300300194525" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="1549623362516537">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="buttonplay" sid="5797842246284277">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="2919862647616433">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1656765999842812" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\buttonplay.png">
+                        <collision-poly>
+                            <point x="0.0714286" y="0.125" />
+                            <point x="0.5" y="0" />
+                            <point x="0.928571" y="0.125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.928571" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0714286" y="0.875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buttoninfo" sid="135639936919379">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="7342346493351869">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6530242616027308" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\buttoninfo.png">
+                        <collision-poly>
+                            <point x="0.0714286" y="0.125" />
+                            <point x="0.5" y="0" />
+                            <point x="0.928571" y="0.125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.928571" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0714286" y="0.875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Credits" sid="8367394067675708">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="493056655282691">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2703326413703959" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\Credits.png">
+                        <collision-poly>
+                            <point x="0.0983333" y="0.0983333" />
+                            <point x="0.5" y="0.08" />
+                            <point x="0.895" y="0.105" />
+                            <point x="0.533333" y="0.533333" />
+                            <point x="0.5" y="0.38" />
+                            <point x="0.448333" y="0.551667" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="buttonback" sid="2709987881638827">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="612544357087405">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5428398348095996" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\buttonback.png">
+                        <collision-poly>
+                            <point x="0.0714286" y="0.125" />
+                            <point x="0.5" y="0" />
+                            <point x="0.928571" y="0.125" />
+                            <point x="1" y="0.5" />
+                            <point x="0.928571" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0714286" y="0.875" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MovingPlatform" sid="4285343655227603">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="8267616428625498">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="2140256142130874">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="294168649582039" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\moving platform.png">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CrumblingPlatform" sid="9349392543889854">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7631200292542325">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="8417016641894857">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3307527517175304" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\Crumbling Platform.png">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="0" name="Breaking" pingpong="0" repeatcount="1" repeatto="0" sid="4107036463755751" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\Crumbling Platform1.png">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\Crumbling Platform2.png">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1" original-source="C:\Users\juang\Desktop\TLOS\Plataformero\Crumbling Platform3.png">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="0" name="Spawning" pingpong="0" repeatcount="1" repeatto="0" sid="1269398044204533" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <collision-poly>
+                            <point x="1" y="0.5" />
+                            <point x="1" y="0.808594" />
+                            <point x="0" y="0.808594" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerSpawner" sid="7208570480008197">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4077210048273681" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mask" sid="7126574390719631">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3722575095927257" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TimeText" sid="4288909559043091">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="7669332275109305">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="WinText" sid="68618188561929">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="5038702700569736">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Audio" sid="4280560513142158">
+            <plugin id="Audio" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Main Menu.xml</layout>
+        <layout>Level0.xml</layout>
+        <layout>Level1.xml</layout>
+        <layout>Level2.xml</layout>
+        <layout>Win.xml</layout>
+        <layout>LevelTest.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>L1 Event Sheet.xml</event-sheet>
+        <event-sheet>PlayerBehaviour.xml</event-sheet>
+        <event-sheet>Main Menu Sheet.xml</event-sheet>
+        <event-sheet>Win Event Sheet.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="6" />
+        <global-instance type="Mouse" uid="243" />
+        <global-instance type="Audio" uid="173">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="crumbling.m4a" />
+        <file name="crumbling.ogg" />
+        <file name="Explosion11.m4a" />
+        <file name="Explosion11.ogg" />
+        <file name="Hit_Hurt66.m4a" />
+        <file name="Hit_Hurt66.ogg" />
+        <file name="Jump41.m4a" />
+        <file name="Jump41.ogg" />
+        <file name="Pickup_Coin12.m4a" />
+        <file name="Pickup_Coin12.ogg" />
+        <file name="tp.m4a" />
+        <file name="tp.ogg" />
+        <file name="wallJump41.m4a" />
+        <file name="wallJump41.ogg" />
+        <file name="win.m4a" />
+        <file name="win.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

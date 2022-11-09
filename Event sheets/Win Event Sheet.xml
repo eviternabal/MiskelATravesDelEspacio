@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Win Event Sheet</name>
+    <events>
+        <include>L1 Event Sheet</include>
+        <event-block sid="3730199037929654">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6570757028657233" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="6821239816173395" type="ScoreText">
+                    <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                </action>
+                <action disabled="1" id="0" name="Set text" sid="5010945298498921" type="TimeText">
+                    <param id="0" name="Text">&quot;Time: &quot; &amp; timer</param>
+                </action>
+                <action id="-9" name="Set value" sid="9927672123927185" type="System">
+                    <param id="0" name="Variable">playerHasMoved</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>L1 Event Sheet</name>
+    <events>
+        <variable constant="0" name="timer" sid="9924085193288175" static="0" type="number">0</variable>
+        <variable constant="0" name="playerHasMoved" sid="883737363481814" static="0" type="number">0</variable>
+        <include>PlayerBehaviour</include>
+        <variable constant="0" name="Score" sid="4405665263276349" static="0" type="number">0</variable>
+        <variable constant="0" name="tpCooldown" sid="6113413267028952" static="0" type="number">0</variable>
+        <event-block sid="389706046751947">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3544437807395637" type="Player">
+                    <param id="0" name="Object">PickMe</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3627085361244126" type="PickMe" />
+                <action id="-10" name="Add to" sid="4605625246947818" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="4089961987614845" type="ScoreText">
+                    <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                </action>
+                <action id="0" name="Play" sid="5151252429968057" type="Audio">
+                    <param id="0" name="Audio file">Pickup_Coin12</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7768764069294321">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="7060531007172012" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="8724477027874468" type="ScoreText">
+                    <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                </action>
+                <action id="0" name="Set text" sid="981734591674393" type="TimeText">
+                    <param id="0" name="Text">&quot;Time: &quot; &amp; timer</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="4136510693919712" title="CrumblingPlatform">
+            <sub-events>
+                <event-block sid="3750592942112829">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9509794547319064" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2216466215098102" type="CrumblingPlatform">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="3670884414123033" type="CrumblingPlatform">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5908913586622869">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="591289574150552" type="Player">
+                            <param id="0" name="Object">CrumblingPlatform</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="7243116441693658" type="CrumblingPlatform">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">Player.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="4243351419137134" type="Audio">
+                            <param id="0" name="Audio file">Explosion11</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="7888734230028663" type="CrumblingPlatform">
+                            <param id="0" name="Animation">&quot;Breaking&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6292987033954844" type="System">
+                            <param id="0" name="Seconds">0.7</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="1588144307279036" type="CrumblingPlatform">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2220832713202366" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="7919142751537194" type="CrumblingPlatform">
+                            <param id="0" name="Animation">&quot;Spawning&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="3459530145801593" type="CrumblingPlatform">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3982163437818955" title="Teleporters">
+            <sub-events>
+                <event-block sid="8619414930750214">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="5859217933285268" type="System" />
+                        <condition id="-14" name="Compare variable" sid="9217603894480041" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="1699322199647931" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Value">0.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4103420159052959">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1612242499245851" type="Player">
+                            <param id="0" name="Object">1Entry</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9470076283377651" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="1291530690961539" type="Audio">
+                            <param id="0" name="Audio file">tp</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3382319219186451" type="Player">
+                            <param id="0" name="X">1Exit.X</param>
+                            <param id="1" name="Y">1Exit.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4985283217798479" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9721264738538976">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1235145867069702" type="Player">
+                            <param id="0" name="Object">2Entry</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="7928781563843018" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="7055357913168003" type="Audio">
+                            <param id="0" name="Audio file">tp</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="145620479184542" type="Player">
+                            <param id="0" name="X">2Exit.X</param>
+                            <param id="1" name="Y">2Exit.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7524817528751783" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9608328245605065">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7879848946707352" type="Player">
+                            <param id="0" name="Object">3Entry</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="1921382541735751" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="4278492475619678" type="Audio">
+                            <param id="0" name="Audio file">tp</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="8536920191980921" type="Player">
+                            <param id="0" name="X">3Exit.X</param>
+                            <param id="1" name="Y">3Exit.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8379487842510639" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1879576756194909">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6070527429538505" type="Player">
+                            <param id="0" name="Object">4Entry</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6265026691930846" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="5941223256415813" type="Audio">
+                            <param id="0" name="Audio file">tp</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2479661466490891" type="Player">
+                            <param id="0" name="X">4Exit.X</param>
+                            <param id="1" name="Y">4Exit.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9296008410155934" type="System">
+                            <param id="0" name="Variable">tpCooldown</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="1559090908111923">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3666163798638477" type="System">
+                    <param id="0" name="Variable">playerHasMoved</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6890266213844109">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4707360940977394" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="7748840085831143" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Value">0.1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="859801660500161" type="TimeText">
+                            <param id="0" name="Text">&quot;Time: &quot; &amp; timer</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="9549277795071847">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="5264647192716351" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="6458923508513383" type="System">
+                    <param id="0" name="Variable">playerHasMoved</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

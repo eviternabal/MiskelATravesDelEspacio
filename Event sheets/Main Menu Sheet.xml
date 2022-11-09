@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Main Menu Sheet</name>
+    <events>
+        <event-block sid="5609427281733862">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6292342444357449" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-group description="" sid="1225724578358836" title="Play Button">
+                    <sub-events>
+                        <event-block sid="8847917938264803">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="3895884149567453" type="Mouse">
+                                    <param id="0" name="Object">buttonplay</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="9553963421637957" type="buttonplay">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4778655867205583">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="3868127077726418" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">buttonplay</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set blend mode" sid="1354502892667971" type="buttonplay">
+                                            <param id="0" name="Blend mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4337559320047376">
+                                    <conditions>
+                                        <condition id="3" name="On button released" sid="746343843504464" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Go to layout" sid="2838669696311092" type="System">
+                                            <param id="0" name="Layout">Level0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6600055522196523">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="9060578660666185" type="Mouse">
+                                    <param id="0" name="Object">buttonplay</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="6063851835879218" type="buttonplay">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="3952456396039044" type="buttonplay">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="7626488558304918" title="Info Button">
+                    <sub-events>
+                        <event-block sid="8847917938264803">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="3895884149567453" type="Mouse">
+                                    <param id="0" name="Object">buttoninfo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="9553963421637957" type="buttoninfo">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4778655867205583">
+                                    <conditions>
+                                        <condition id="2" name="Mouse button is down" sid="3868127077726418" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set blend mode" sid="1354502892667971" type="buttoninfo">
+                                            <param id="0" name="Blend mode">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="8799807720930704" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="1" name="Set blend mode" sid="3285618645039894" type="buttoninfo">
+                                            <param id="0" name="Blend mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4337559320047376">
+                                    <conditions>
+                                        <condition id="3" name="On button released" sid="746343843504464" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-7" name="Scroll to position" sid="2838669696311092" type="System">
+                                            <param id="0" name="X">0</param>
+                                            <param id="1" name="Y">500</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6600055522196523">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="9060578660666185" type="Mouse">
+                                    <param id="0" name="Object">buttoninfo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="6063851835879218" type="buttoninfo">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="3952456396039044" type="buttoninfo">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="7668911573316125" title="Back Button">
+                    <sub-events>
+                        <event-block sid="8847917938264803">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="3895884149567453" type="Mouse">
+                                    <param id="0" name="Object">buttonback</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="9553963421637957" type="buttonback">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4778655867205583">
+                                    <conditions>
+                                        <condition id="2" name="Mouse button is down" sid="3868127077726418" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set blend mode" sid="1354502892667971" type="buttonback">
+                                            <param id="0" name="Blend mode">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="8799807720930704" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="1" name="Set blend mode" sid="3285618645039894" type="buttonback">
+                                            <param id="0" name="Blend mode">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4337559320047376">
+                                    <conditions>
+                                        <condition id="3" name="On button released" sid="746343843504464" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-7" name="Scroll to position" sid="2838669696311092" type="System">
+                                            <param id="0" name="X">0</param>
+                                            <param id="1" name="Y">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6600055522196523">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="9060578660666185" type="Mouse">
+                                    <param id="0" name="Object">buttonback</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="6063851835879218" type="buttonback">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="3952456396039044" type="buttonback">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

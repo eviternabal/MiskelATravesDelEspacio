@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PlayerBehaviour</name>
+    <events>
+        <variable constant="0" name="stamina" sid="5743010250370578" static="0" type="number">1000</variable>
+        <variable constant="0" name="hasWallJumped" sid="5429432507783844" static="0" type="number">0</variable>
+        <variable constant="0" name="isDying" sid="6615594512630176" static="0" type="number">0</variable>
+        <variable constant="0" name="coyoteTimer" sid="5540371888486729" static="0" type="number">0</variable>
+        <variable constant="0" name="hasPressedJump" sid="5627270164644686" static="0" type="number">0</variable>
+        <event-group description="" sid="923131997727185" title="CustomController">
+            <sub-events>
+                <event-group description="" sid="3217356816598273" title="Jump">
+                    <sub-events>
+                        <comment>JUMP</comment>
+                        <event-block sid="5257171872964162">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="9621883398635059" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="1229246404446629">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="5270836492725773" type="Player" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="7132840298205609" type="Player">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="5698887024562498" type="System">
+                                            <param id="0" name="Variable">hasPressedJump</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="9661351916871984" type="Audio">
+                                            <param id="0" name="Audio file">Jump41</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>COYOTE TIME</comment>
+                                <event-block sid="5998749001880392">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="2412647654258847" type="Player" />
+                                        <condition id="-14" name="Compare variable" sid="7619551672481747" type="System">
+                                            <param id="0" name="Variable">hasPressedJump</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="9620953105255309" type="System">
+                                            <param id="0" name="Variable">hasPressedJump</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="7175955588926419" type="Player">
+                                            <param id="0" name="Vector Y">-485</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="3963789565364615" type="Audio">
+                                            <param id="0" name="Audio file">Jump41</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8368175746939705">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="5966925994712836" type="Player" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1838507795346413">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="4139362908241557" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="6647787977840781" type="System">
+                                            <param id="0" name="Variable">coyoteTimer</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0.8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="4528846129276939" type="System">
+                                            <param id="0" name="Variable">coyoteTimer</param>
+                                            <param id="1" name="Value">0.1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="3628973913392507">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="2927019797515954" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8445100611007466" type="System">
+                                    <param id="0" name="Variable">hasPressedJump</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5205489132763314" type="System">
+                                    <param id="0" name="Variable">coyoteTimer</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8668360894103196" type="System">
+                                    <param id="0" name="Variable">hasWallJumped</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="6632453582976541" type="System">
+                                    <param id="0" name="Variable">stamina</param>
+                                    <param id="1" name="Value">1000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7718568731015034">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3327876839558112" type="System">
+                                    <param id="0" name="Variable">coyoteTimer</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0.8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6070203629554061" type="System">
+                                    <param id="0" name="Variable">hasPressedJump</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5682967518371114">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="2495984553264587" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="3036034026287553" type="tptime">
+                                    <param id="0" name="Text">coyoteTimer</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" sid="5748377066448971" title="WallJump">
+                            <sub-events>
+                                <variable constant="0" name="WalljumpHForce" sid="9877646438675147" static="0" type="number">1500</variable>
+                                <event-block any="1" sid="7375310622005932">
+                                    <conditions>
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="9604747558110088" type="Player" />
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="3994438843840694" type="Player" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1654982678770221">
+                                            <conditions>
+                                                <condition id="0" name="On key pressed" sid="5734271281738138" type="Keyboard">
+                                                    <param id="0" name="Key">38</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="6814460592383533" type="System">
+                                                    <param id="0" name="Variable">hasWallJumped</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="8329635124812373" type="System">
+                                                    <param id="0" name="Variable">stamina</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="9935356222533331">
+                                                    <conditions>
+                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="2824801424246304" type="Player">
+                                                            <param id="0" name="Side">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="7595398148119254" type="Audio">
+                                                            <param id="0" name="Audio file">wallJump41</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="402912003682379" type="Player">
+                                                            <param id="0" name="Vector Y">-485</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="8678899784133277" type="Player">
+                                                            <param id="0" name="Vector X">-WalljumpHForce</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="973358104065164" type="System">
+                                                            <param id="0" name="Variable">hasWallJumped</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-11" name="Subtract from" sid="2961853003916003" type="System">
+                                                            <param id="0" name="Variable">stamina</param>
+                                                            <param id="1" name="Value">500</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="9847787923607636">
+                                                    <conditions>
+                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="8918668708617531" type="Player">
+                                                            <param id="0" name="Side">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="8870145471723885" type="Audio">
+                                                            <param id="0" name="Audio file">wallJump41</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="9686244710571726" type="Player">
+                                                            <param id="0" name="Vector Y">-485</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="2901277952859532" type="Player">
+                                                            <param id="0" name="Vector X">WalljumpHForce</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="610300148676353" type="System">
+                                                            <param id="0" name="Variable">hasWallJumped</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-11" name="Subtract from" sid="7904730486540287" type="System">
+                                                            <param id="0" name="Variable">stamina</param>
+                                                            <param id="1" name="Value">500</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="1673302320925313">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="9045823943599242" type="Player">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" inverted="1" name="Is by wall" sid="9392227518985424" type="Player">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="6902589055809651" type="Player">
+                                            <param id="0" name="Gravity">2500</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="4041758729500573" type="System">
+                                            <param id="0" name="Variable">hasWallJumped</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="1444776661414198" title="JumpSustain">
+                            <sub-events>
+                                <event-block sid="2572966230348391">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="4453851949478897" type="Keyboard">
+                                            <param id="0" name="Key">38</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="2030149057872216" type="Player">
+                                            <param id="0" name="Gravity">1500</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7154374906789215">
+                                    <conditions>
+                                        <condition id="3" name="On key released" sid="5385793110451193" type="Keyboard">
+                                            <param id="0" name="Key">38</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="6968276841049845" type="Player">
+                                            <param id="0" name="Gravity">2500</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="4259976417570529" title="Horizontal Movement">
+                    <sub-events>
+                        <comment>HORIZONTAL</comment>
+                        <event-block sid="8158464679323585">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="8614527598723106" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="1131479431234909" type="Player">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="6075351359960535" type="PlayerAnim">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7362171588368664">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="5231849794746166" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="5885745904006227" type="Player">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="836442219130698" type="PlayerAnim">
+                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4391289863822851">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="6721167383637115" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="3676320414526221" type="PlayerAnim">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2749936328176654">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="2397247763069362" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="2810551993039876" type="PlayerAnim">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" sid="3695853374438149" title="Flip">
+                            <sub-events>
+                                <event-block sid="3535569029032838">
+                                    <conditions>
+                                        <condition id="-14" inverted="1" name="Compare variable" sid="4680035670212323" type="System">
+                                            <param id="0" name="Variable">isDying</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="7317276743130543">
+                                            <conditions>
+                                                <condition id="0" name="On key pressed" sid="3457764877118294" type="Keyboard">
+                                                    <param id="0" name="Key">39</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="7" name="Set mirrored" sid="4710100748050572" type="PlayerAnim">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2590398140565245">
+                                            <conditions>
+                                                <condition id="0" name="On key pressed" sid="8636513547414612" type="Keyboard">
+                                                    <param id="0" name="Key">37</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="7" name="Set mirrored" sid="3224655972016668" type="PlayerAnim">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7944153414014871" title="LoseCons">
+            <sub-events>
+                <event-block sid="4847850763319753">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6602839679556354" type="Player">
+                            <param id="0" name="Object">Spikes</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1997221457404745" type="System">
+                            <param id="0" name="Variable">isDying</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="3692399377883628" type="Audio">
+                            <param id="0" name="Audio file">Hit_Hurt66</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2663799978060338">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="293110050481246" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7365295411001514" type="System">
+                            <param id="0" name="Variable">isDying</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9592224490038356">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9901415195004063" type="System">
+                            <param id="0" name="Variable">isDying</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Set object time scale" sid="7368042871639879" type="System">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Time scale">0</param>
+                        </action>
+                        <action behavior="ScrollTo" id="0" name="Shake" sid="2187100243392862" type="Player">
+                            <param id="0" name="Magnitude">20</param>
+                            <param id="1" name="Duration">0.2</param>
+                            <param id="2" name="Mode">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1579170678675344" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="9013324700215777" type="System">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Time scale">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7705182857309296" type="System">
+                            <param id="0" name="Variable">isDying</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="7854545313473342" type="Death" />
+                        <action id="-3" name="Set position" sid="1362770928673533" type="Player">
+                            <param id="0" name="X">PlayerSpawner.X</param>
+                            <param id="1" name="Y">PlayerSpawner.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9449356343289099" title="WinCons">
+            <sub-events>
+                <event-block sid="6553577780851649">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5566591242962618" type="Player">
+                            <param id="0" name="Object">Win</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-43" name="Go to next/previous layout" sid="8617757451305873" type="System">
+                            <param id="0" name="Which">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="8345141765707365" type="Audio">
+                            <param id="0" name="Audio file">win</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1225615772500242" title="Reset Variables">
+            <sub-events>
+                <event-block sid="6373360633831426">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="7911359657725464" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="3790324548459851" type="Player">
+                            <param id="0" name="X">PlayerSpawner.X</param>
+                            <param id="1" name="Y">PlayerSpawner.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5106183526758468" type="System">
+                            <param id="0" name="Variable">isDying</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="4729116447830511" type="PlayerAnim">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="4942680048210095" type="PlayerAnim">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="571683330630339" title="Slowfall Mechanic">
+            <sub-events>
+                <event-block sid="4681931708940858">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="8053838844383008" type="Player">
+                            <param id="0" name="Object">Slowfall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="5333165499929412" type="Player">
+                            <param id="0" name="Max fall speed">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="976400435676925">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="1734218876649227" type="Player">
+                            <param id="0" name="Object">Slowfall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="3717959533235469" type="Player">
+                            <param id="0" name="Max fall speed">650</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9120965018107629" title="Checkpoint Mechanic">
+            <sub-events>
+                <event-block sid="784836436889424">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2665509321093404" type="Player">
+                            <param id="0" name="Object">Checkpoint</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="4133315547764458" type="PlayerSpawner">
+                            <param id="0" name="X">Checkpoint.X</param>
+                            <param id="1" name="Y">Checkpoint.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
