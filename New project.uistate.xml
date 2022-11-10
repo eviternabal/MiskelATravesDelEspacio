@@ -10,16 +10,16 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">LevelTest</layout>
-        <layout order="1">Main Menu</layout>
-        <layout order="2">Level0</layout>
-        <layout order="3">Level1</layout>
-        <layout order="4">Level2</layout>
-        <layout order="5">Win</layout>
-        <event-sheet order="6">L1 Event Sheet</event-sheet>
-        <event-sheet active="1" order="7">PlayerBehaviour</event-sheet>
-        <event-sheet order="8">Main Menu Sheet</event-sheet>
-        <event-sheet order="9">Win Event Sheet</event-sheet>
+        <layout order="1">LevelTest</layout>
+        <layout order="2">Main Menu</layout>
+        <layout order="3">Level0</layout>
+        <layout order="4">Level1</layout>
+        <layout order="5">Level2</layout>
+        <layout order="6">Win</layout>
+        <event-sheet order="7">L1 Event Sheet</event-sheet>
+        <event-sheet active="1" order="8">PlayerBehaviour</event-sheet>
+        <event-sheet order="9">Main Menu Sheet</event-sheet>
+        <event-sheet order="10">Win Event Sheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

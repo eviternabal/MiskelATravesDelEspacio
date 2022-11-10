@@ -131,16 +131,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="5682967518371114">
-                            <conditions>
-                                <condition id="-1" name="Every tick" sid="2495984553264587" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="3036034026287553" type="tptime">
-                                    <param id="0" name="Text">coyoteTimer</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-group description="" sid="5748377066448971" title="WallJump">
                             <sub-events>
                                 <variable constant="0" name="WalljumpHForce" sid="9877646438675147" static="0" type="number">1500</variable>
@@ -284,11 +274,79 @@
                 </event-group>
                 <event-group description="" sid="4259976417570529" title="Horizontal Movement">
                     <sub-events>
+                        <event-block sid="5682967518371114">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="2495984553264587" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="3036034026287553" type="tptime">
+                                    <param id="0" name="Text">moveDir</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <comment>HORIZONTAL</comment>
+                        <variable constant="0" name="moveDir" sid="343667547927830" static="0" type="text">none</variable>
+                        <comment>arreglar input overwrite para der / izq. Solo toma el primero en ejecutarse</comment>
+                        <event-block sid="7362171588368664">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="5231849794746166" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="938634911830124" type="System">
+                                    <param id="0" name="Variable">moveDir</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="869361132378335" type="System">
+                                    <param id="0" name="Variable">moveDir</param>
+                                    <param id="1" name="Value">&quot;right&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="8158464679323585">
                             <conditions>
-                                <condition id="2" name="Key is down" sid="8614527598723106" type="Keyboard">
+                                <condition id="2" name="Key is down" sid="761048487199008" type="Keyboard">
                                     <param id="0" name="Key">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="390282918417869" type="System">
+                                    <param id="0" name="Variable">moveDir</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="510654107363376" type="System">
+                                    <param id="0" name="Variable">moveDir</param>
+                                    <param id="1" name="Value">&quot;left&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="4391289863822851">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="6721167383637115" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                                <condition id="3" name="On key released" sid="2397247763069362" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="3676320414526221" type="PlayerAnim">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="603149545190782" type="System">
+                                    <param id="0" name="Variable">moveDir</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="351488557579869">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="385955785721006" type="System">
+                                    <param id="0" name="Variable">moveDir</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;left&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -301,10 +359,12 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="7362171588368664">
+                        <event-block sid="435172415116845">
                             <conditions>
-                                <condition id="2" name="Key is down" sid="5231849794746166" type="Keyboard">
-                                    <param id="0" name="Key">39</param>
+                                <condition id="-14" name="Compare variable" sid="102422235212730" type="System">
+                                    <param id="0" name="Variable">moveDir</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;right&quot;</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -313,32 +373,6 @@
                                 </action>
                                 <action id="4" name="Set animation" sid="836442219130698" type="PlayerAnim">
                                     <param id="0" name="Animation">&quot;Walk&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="4391289863822851">
-                            <conditions>
-                                <condition id="3" name="On key released" sid="6721167383637115" type="Keyboard">
-                                    <param id="0" name="Key">37</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="3676320414526221" type="PlayerAnim">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="2749936328176654">
-                            <conditions>
-                                <condition id="3" name="On key released" sid="2397247763069362" type="Keyboard">
-                                    <param id="0" name="Key">39</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="2810551993039876" type="PlayerAnim">
-                                    <param id="0" name="Animation">&quot;Default&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
                             </actions>
@@ -551,5 +585,11 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="577241937101404">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="462663039756883" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
     </events>
 </c2eventsheet>
