@@ -10,16 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="1">LevelTest</layout>
-        <layout order="2">Main Menu</layout>
-        <layout order="3">Level0</layout>
-        <layout order="4">Level1</layout>
-        <layout order="5">Level2</layout>
-        <layout order="6">Win</layout>
-        <event-sheet order="7">L1 Event Sheet</event-sheet>
-        <event-sheet active="1" order="8">PlayerBehaviour</event-sheet>
-        <event-sheet order="9">Main Menu Sheet</event-sheet>
-        <event-sheet order="10">Win Event Sheet</event-sheet>
+        <layout order="0">LevelTest</layout>
+        <layout order="3">Level3</layout>
+        <event-sheet order="1">L1 Event Sheet</event-sheet>
+        <event-sheet active="1" order="2">PlayerBehaviour</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -65,5 +59,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/CrumblingPlatform/" />
         <folder expanded="1" path="animation-folder/PlayerSpawner/" />
         <folder expanded="1" path="animation-folder/Mask/" />
+        <folder expanded="1" path="animation-folder/Dasher/" />
+        <folder expanded="1" path="animation-folder/StaminaBar/" />
+        <folder expanded="1" path="animation-folder/StaminaBarContainer/" />
     </folders-expanded>
 </c2uistate>

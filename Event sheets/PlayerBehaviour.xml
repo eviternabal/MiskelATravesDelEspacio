@@ -3,6 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>PlayerBehaviour</name>
     <events>
+        <variable constant="0" name="usingStamina" sid="817220907706258" static="0" type="number">0</variable>
+        <variable constant="0" name="isFlipped" sid="315804198570216" static="0" type="number">0</variable>
+        <variable constant="0" name="canDash" sid="541354152621679" static="0" type="number">0</variable>
         <variable constant="0" name="stamina" sid="5743010250370578" static="0" type="number">1000</variable>
         <variable constant="0" name="hasWallJumped" sid="5429432507783844" static="0" type="number">0</variable>
         <variable constant="0" name="isDying" sid="6615594512630176" static="0" type="number">0</variable>
@@ -10,6 +13,76 @@
         <variable constant="0" name="hasPressedJump" sid="5627270164644686" static="0" type="number">0</variable>
         <event-group description="" sid="923131997727185" title="CustomController">
             <sub-events>
+                <event-group description="" sid="318034944191528" title="Stamina">
+                    <sub-events>
+                        <event-block sid="216942281402980">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="713328529868895" type="System">
+                                    <param id="0" name="Variable">usingStamina</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="152033541169930" type="StaminaBar">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="826212785606347" type="StaminaBarContainer">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="944008831544147">
+                                    <conditions>
+                                        <condition id="-1" name="Every tick" sid="268788134782264" type="System" />
+                                        <condition id="-5" name="Compare width" sid="946023274981725" type="StaminaBar">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Width">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Set width" sid="709659794744813" type="StaminaBar">
+                                            <param id="0" name="Width"> 50 * (stamina/1000)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="166486579835428">
+                                    <conditions>
+                                        <condition id="-5" name="Compare width" sid="944409238600702" type="StaminaBar">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="Width">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Set width" sid="983460061854321" type="StaminaBar">
+                                            <param id="0" name="Width">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="175684981708730">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="765449029581465" type="System">
+                                    <param id="0" name="Variable">usingStamina</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="476672689040837" type="StaminaBar">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="202195264918050" type="StaminaBarContainer">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="922965559217394" type="StaminaBar">
+                                    <param id="0" name="Width">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group description="" sid="3217356816598273" title="Jump">
                     <sub-events>
                         <comment>JUMP</comment>
@@ -114,6 +187,10 @@
                                     <param id="0" name="Variable">stamina</param>
                                     <param id="1" name="Value">1000</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="233421097148131" type="System">
+                                    <param id="0" name="Variable">usingStamina</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="7718568731015034">
@@ -166,6 +243,10 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
+                                                        <action id="-9" name="Set value" sid="690263265543543" type="System">
+                                                            <param id="0" name="Variable">usingStamina</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
                                                         <action id="0" name="Play" sid="7595398148119254" type="Audio">
                                                             <param id="0" name="Audio file">wallJump41</param>
                                                             <param id="2" name="Loop">0</param>
@@ -184,7 +265,7 @@
                                                         </action>
                                                         <action id="-11" name="Subtract from" sid="2961853003916003" type="System">
                                                             <param id="0" name="Variable">stamina</param>
-                                                            <param id="1" name="Value">500</param>
+                                                            <param id="1" name="Value">400</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -213,7 +294,7 @@
                                                         </action>
                                                         <action id="-11" name="Subtract from" sid="7904730486540287" type="System">
                                                             <param id="0" name="Variable">stamina</param>
-                                                            <param id="1" name="Value">500</param>
+                                                            <param id="1" name="Value">400</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -239,6 +320,67 @@
                                             <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
+                                </event-block>
+                                <event-block any="1" sid="186824080004734">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="528263514907584" type="Keyboard">
+                                            <param id="0" name="Key">37</param>
+                                        </condition>
+                                        <condition id="2" name="Key is down" sid="417047507398001" type="Keyboard">
+                                            <param id="0" name="Key">39</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="344662963716024">
+                                            <conditions>
+                                                <condition behavior="Platform" id="10" name="Is by wall" sid="811601133834036" type="Player">
+                                                    <param id="0" name="Side">0</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="10" name="Is by wall" sid="830492275878583" type="Player">
+                                                    <param id="0" name="Side">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="378425256335023">
+                                                    <conditions>
+                                                        <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="690139889571652" type="Player" />
+                                                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="999222085749192" type="Player" />
+                                                        <condition id="-14" name="Compare variable" sid="488948172966875" type="System">
+                                                            <param id="0" name="Variable">stamina</param>
+                                                            <param id="1" name="Comparison">4</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="980758330658893" type="System">
+                                                            <param id="0" name="Variable">usingStamina</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="292753699613320" type="Player">
+                                                            <param id="0" name="Vector Y">20</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="624652834427559">
+                                                            <conditions>
+                                                                <condition id="-6" name="Every X seconds" sid="502572616699110" type="System">
+                                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-11" name="Subtract from" sid="782445504966503" type="System">
+                                                                    <param id="0" name="Variable">stamina</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-group>
@@ -274,53 +416,7 @@
                 </event-group>
                 <event-group description="" sid="4259976417570529" title="Horizontal Movement">
                     <sub-events>
-                        <event-block sid="5682967518371114">
-                            <conditions>
-                                <condition id="-1" name="Every tick" sid="2495984553264587" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Set text" sid="3036034026287553" type="tptime">
-                                    <param id="0" name="Text">moveDir</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <comment>HORIZONTAL</comment>
-                        <variable constant="0" name="moveDir" sid="343667547927830" static="0" type="text">none</variable>
-                        <comment>arreglar input overwrite para der / izq. Solo toma el primero en ejecutarse</comment>
-                        <event-block sid="7362171588368664">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="5231849794746166" type="Keyboard">
-                                    <param id="0" name="Key">39</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="938634911830124" type="System">
-                                    <param id="0" name="Variable">moveDir</param>
-                                    <param id="1" name="Value">&quot;none&quot;</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="869361132378335" type="System">
-                                    <param id="0" name="Variable">moveDir</param>
-                                    <param id="1" name="Value">&quot;right&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8158464679323585">
-                            <conditions>
-                                <condition id="2" name="Key is down" sid="761048487199008" type="Keyboard">
-                                    <param id="0" name="Key">37</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="390282918417869" type="System">
-                                    <param id="0" name="Variable">moveDir</param>
-                                    <param id="1" name="Value">&quot;none&quot;</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="510654107363376" type="System">
-                                    <param id="0" name="Variable">moveDir</param>
-                                    <param id="1" name="Value">&quot;left&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block any="1" sid="4391289863822851">
                             <conditions>
                                 <condition id="3" name="On key released" sid="6721167383637115" type="Keyboard">
@@ -335,18 +431,12 @@
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="603149545190782" type="System">
-                                    <param id="0" name="Variable">moveDir</param>
-                                    <param id="1" name="Value">&quot;none&quot;</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="351488557579869">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="385955785721006" type="System">
-                                    <param id="0" name="Variable">moveDir</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;left&quot;</param>
+                                <condition id="2" name="Key is down" sid="910311469288038" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -361,10 +451,8 @@
                         </event-block>
                         <event-block sid="435172415116845">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="102422235212730" type="System">
-                                    <param id="0" name="Variable">moveDir</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;right&quot;</param>
+                                <condition id="2" name="Key is down" sid="862017675582556" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -399,6 +487,10 @@
                                                 <action id="7" name="Set mirrored" sid="4710100748050572" type="PlayerAnim">
                                                     <param id="0" name="State">1</param>
                                                 </action>
+                                                <action id="-9" name="Set value" sid="366990565645602" type="System">
+                                                    <param id="0" name="Variable">isFlipped</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                         <event-block sid="2590398140565245">
@@ -410,6 +502,10 @@
                                             <actions>
                                                 <action id="7" name="Set mirrored" sid="3224655972016668" type="PlayerAnim">
                                                     <param id="0" name="State">0</param>
+                                                </action>
+                                                <action id="-9" name="Set value" sid="749435337170549" type="System">
+                                                    <param id="0" name="Variable">isFlipped</param>
+                                                    <param id="1" name="Value">-1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -536,6 +632,14 @@
                             <param id="0" name="Pin to">Player</param>
                             <param id="1" name="Mode">0</param>
                         </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="747434461388728" type="StaminaBar">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="876912245279287" type="StaminaBarContainer">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -589,7 +693,186 @@
             <conditions>
                 <condition id="-1" name="Every tick" sid="462663039756883" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="0" name="Set text" sid="978361987820796" type="tptime">
+                    <param id="0" name="Text">player.Angle</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable constant="0" name="isDashing" sid="197278501088653" static="0" type="number">0</variable>
+        <event-group description="" sid="934013882565591" title="DashMechanic">
+            <sub-events>
+                <event-block sid="426613985280341">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="205107225464177" type="Player">
+                            <param id="0" name="Object">Dasher</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="988735957153375" type="System">
+                            <param id="0" name="Variable">canDash</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="684609600336583" type="System">
+                            <param id="0" name="Variable">canDash</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="395989443658526" type="Dasher">
+                            <param id="0" name="Duration">5</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;Regen&quot;</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="229678228539581" type="Dasher">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="115342752247891" type="Dasher">
+                            <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">20</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="666041161621236" type="System">
+                            <param id="0" name="Variable">stamina</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="853449509308219">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="729829741747377" type="Dasher">
+                            <param id="0" name="Tag">&quot;Regen&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="498849365067314" type="Dasher">
+                            <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="427846608406480" type="Dasher">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="881890603017040">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="959988299118258" type="System">
+                            <param id="0" name="Variable">canDash</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="704799814350621">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="196531765286226" type="Keyboard">
+                                    <param id="0" name="Key">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="976408737462141" type="System">
+                                    <param id="0" name="Variable">canDash</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="334499262755479" type="System">
+                                    <param id="0" name="Variable">isDashing</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="640403882134919" type="Player">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="285529042560650" type="Player">
+                                    <param id="0" name="Angle">Player.Angle</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="743223790359555" type="Player">
+                                    <param id="0" name="Speed">600 * isFlipped</param>
+                                </action>
+                                <action behavior="Timer" id="0" name="Start timer" sid="169275998749019" type="Player">
+                                    <param id="0" name="Duration">0.2</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;Dashing&quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="859877630941667" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="723674028247715" type="PlayerAnim">
+                                    <param id="0" name="Effect">&quot;BlurHorizontal&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </action>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="806453780545937" type="Player">
+                                    <param id="0" name="Magnitude">10</param>
+                                    <param id="1" name="Duration">0.2</param>
+                                    <param id="2" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="382899124892338">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="999572613933316" type="Player">
+                    <param id="0" name="Tag">&quot;Dashing&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="325289618342805" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="866322965617649" type="Player">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="734723516951944" type="Player">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="113172369596921" type="PlayerAnim">
+                    <param id="0" name="Effect">&quot;BlurHorizontal&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="228364709360545" type="System">
+                    <param id="0" name="Variable">isDashing</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="6" name="Set speed" sid="813916211473553" type="Player">
+                    <param id="0" name="Speed">600</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="222150623277429">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="919096156836410" type="System">
+                            <param id="0" name="Variable">stamina</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">1000 - 500</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="806464067871997" type="System">
+                            <param id="0" name="Variable">stamina</param>
+                            <param id="1" name="Value">500</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="624808676362784">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="953191557997629" type="System" />
+                <condition id="-14" name="Compare variable" sid="378937631207368" type="System">
+                    <param id="0" name="Variable">isDashing</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="323313220502634" type="Player">
+                    <param id="0" name="Speed">Player.Bullet.Speed - 10</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
