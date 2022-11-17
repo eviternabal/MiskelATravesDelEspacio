@@ -21,7 +21,6 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
-        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
@@ -35,7 +34,9 @@
     <used-effects>
         <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
         <effect author="Scirra" id="brightness">Brightness</effect>
+        <effect author="Scirra" id="exposure">Exposure</effect>
         <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
+        <effect author="Scirra" id="inverse">Inverse</effect>
         <effect author="Scirra" id="softlight">Soft Light</effect>
     </used-effects>
     <configurations>
@@ -263,9 +264,6 @@
                     <behavior-type name="ScrollTo" sid="5680931300556075">
                         <behavior id="scrollto" />
                     </behavior-type>
-                    <behavior-type name="Bullet" sid="103237811973641">
-                        <behavior id="Bullet" />
-                    </behavior-type>
                     <behavior-type name="Timer" sid="156265132714366">
                         <behavior id="Timer" />
                     </behavior-type>
@@ -297,6 +295,12 @@
                 <effects>
                     <effect-type name="BlurHorizontal">
                         <effect id="blurhorizontal" />
+                    </effect-type>
+                    <effect-type name="Exposure">
+                        <effect id="exposure" />
+                    </effect-type>
+                    <effect-type name="Inverse">
+                        <effect id="inverse" />
                     </effect-type>
                 </effects>
                 <container>
@@ -766,9 +770,9 @@
     <layout-folder>
         <layout>Main Menu.xml</layout>
         <layout>Level0.xml</layout>
+        <layout>Level3.xml</layout>
         <layout>Level1.xml</layout>
         <layout>Level2.xml</layout>
-        <layout>Level3.xml</layout>
         <layout>Win.xml</layout>
         <layout>LevelTest.xml</layout>
     </layout-folder>

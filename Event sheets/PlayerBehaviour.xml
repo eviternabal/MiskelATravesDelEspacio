@@ -358,9 +358,6 @@
                                                             <param id="0" name="Variable">usingStamina</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="292753699613320" type="Player">
-                                                            <param id="0" name="Vector Y">20</param>
-                                                        </action>
                                                     </actions>
                                                     <sub-events>
                                                         <event-block sid="624652834427559">
@@ -640,6 +637,10 @@
                             <param id="0" name="Pin to">Player</param>
                             <param id="1" name="Mode">0</param>
                         </action>
+                        <action id="-27" name="Set effect enabled" sid="111056223792187" type="PlayerAnim">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;BlurHorizontal&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -762,7 +763,13 @@
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-28" name="Set effect parameter" sid="722171312432133" type="PlayerAnim">
+                            <param id="0" name="Effect">&quot;Exposure&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">100</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="704799814350621">
                             <conditions>
@@ -775,26 +782,23 @@
                                     <param id="0" name="Variable">canDash</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="334499262755479" type="System">
+                                <action id="-9" name="Set value" sid="923943666923568" type="System">
                                     <param id="0" name="Variable">isDashing</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="526430082051363" type="Player">
+                                    <param id="0" name="Max Speed">750</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="282870909147493" type="Player">
+                                    <param id="0" name="Vector X">1000 * isFlipped</param>
                                 </action>
                                 <action behavior="Platform" id="0" name="Set ignoring input" sid="640403882134919" type="Player">
                                     <param id="0" name="Input">1</param>
                                 </action>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="285529042560650" type="Player">
-                                    <param id="0" name="Angle">Player.Angle</param>
-                                </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="743223790359555" type="Player">
-                                    <param id="0" name="Speed">600 * isFlipped</param>
-                                </action>
                                 <action behavior="Timer" id="0" name="Start timer" sid="169275998749019" type="Player">
-                                    <param id="0" name="Duration">0.2</param>
+                                    <param id="0" name="Duration">0.3</param>
                                     <param id="1" name="Type">0</param>
                                     <param id="2" name="Tag">&quot;Dashing&quot;</param>
-                                </action>
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="859877630941667" type="Player">
-                                    <param id="0" name="State">1</param>
                                 </action>
                                 <action id="-28" name="Set effect parameter" sid="723674028247715" type="PlayerAnim">
                                     <param id="0" name="Effect">&quot;BlurHorizontal&quot;</param>
@@ -805,6 +809,16 @@
                                     <param id="0" name="Magnitude">10</param>
                                     <param id="1" name="Duration">0.2</param>
                                     <param id="2" name="Mode">0</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="229698438074584" type="PlayerAnim">
+                                    <param id="0" name="Effect">&quot;Exposure&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="424749254337345" type="PlayerAnim">
+                                    <param id="0" name="Effect">&quot;Inverse&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">75</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -819,14 +833,11 @@
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="325289618342805" type="Player">
-                    <param id="0" name="State">0</param>
+                <action behavior="Platform" id="1" name="Set max speed" sid="583932226052003" type="Player">
+                    <param id="0" name="Max Speed">200</param>
                 </action>
                 <action behavior="Platform" id="0" name="Set ignoring input" sid="866322965617649" type="Player">
                     <param id="0" name="Input">0</param>
-                </action>
-                <action id="-8" name="Set angle" sid="734723516951944" type="Player">
-                    <param id="0" name="Angle">0</param>
                 </action>
                 <action id="-28" name="Set effect parameter" sid="113172369596921" type="PlayerAnim">
                     <param id="0" name="Effect">&quot;BlurHorizontal&quot;</param>
@@ -837,8 +848,18 @@
                     <param id="0" name="Variable">isDashing</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="6" name="Set speed" sid="813916211473553" type="Player">
-                    <param id="0" name="Speed">600</param>
+                <action behavior="Timer" id="0" name="Start timer" sid="411911249416193" type="Player">
+                    <param id="0" name="Duration">0.5</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;Finishing&quot;</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="878413746962636" type="Player">
+                    <param id="0" name="Gravity">1500</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="203639082385947" type="PlayerAnim">
+                    <param id="0" name="Effect">&quot;Inverse&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">0</param>
                 </action>
             </actions>
             <sub-events>
@@ -859,20 +880,30 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="624808676362784">
+        <event-block sid="333138833565742">
             <conditions>
-                <condition id="-1" name="Every tick" sid="953191557997629" type="System" />
-                <condition id="-14" name="Compare variable" sid="378937631207368" type="System">
+                <condition id="-14" name="Compare variable" sid="643114951773601" type="System">
                     <param id="0" name="Variable">isDashing</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">1</param>
                 </condition>
             </conditions>
-            <actions>
-                <action behavior="Bullet" id="0" name="Set speed" sid="323313220502634" type="Player">
-                    <param id="0" name="Speed">Player.Bullet.Speed - 10</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="624808676362784">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="953191557997629" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="292753699613320" type="Player">
+                            <param id="0" name="Vector Y">0</param>
+                        </action>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="378065634512567" type="Player">
+                            <param id="0" name="Gravity">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

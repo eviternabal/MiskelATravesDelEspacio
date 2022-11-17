@@ -191,16 +191,6 @@
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
-                        <behavior-instance type="Bullet">
-                            <properties>
-                                <speed>400</speed>
-                                <acceleration>0</acceleration>
-                                <gravity>0</gravity>
-                                <bounce-off-solids>No</bounce-off-solids>
-                                <set-angle>Yes</set-angle>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Timer" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
@@ -592,6 +582,16 @@
                     </behavior-instances>
                     <effect-instances>
                         <effect-instance type="BlurHorizontal">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="Exposure">
+                            <parameters>
+                                <exposure>0</exposure>
+                            </parameters>
+                        </effect-instance>
+                        <effect-instance type="Inverse">
                             <parameters>
                                 <intensity>1</intensity>
                             </parameters>
